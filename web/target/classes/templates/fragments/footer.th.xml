@@ -1,0 +1,7 @@
+<thlogic>
+    <attr sel="#footerId"
+         th:fragment="footer"/>
+    <attr sel="#created-by"
+          th:text="|#{game.createdBy} andrei|"/>
+    <!-- thymeleaf shall only process what's in the tag and leave the rest as is -->
+</thlogic>

@@ -1,0 +1,21 @@
+<thlogic>
+    <attr sel="#headId"
+          th:replace="~{fragments/head :: headFragment}"/>
+    <attr sel ="#game-title"
+          th:text="#{game.title}"/>
+    <attr sel ="#game-over"
+          th:text="#{game.over}"/>
+    <attr sel="#result-message"
+          th:text="${__${resultMessageStr}__}"
+          th:with="resultMessageStr=${T(org.example.util.AttributeNames).RESULT_MESSAGE}"/>
+    <attr sel="#restart"
+          th:href="${replayString}"
+          th:with="replayString=${T(org.example.util.GameMappings).RESTART}"
+          th:text="#{game.play}"/>
+    <attr sel="#home"
+          th:href="${homeString}"
+          th:with="homeString=${T(org.example.util.GameMappings).HOME}"
+          th:text="#{game.home}"/>
+    <attr sel="#footerId"
+          th:replace="~{fragments/footer :: footer}"/>
+</thlogic>

@@ -1,0 +1,6 @@
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>"
+    <logger name="org.example" level="DEBUG"/>
+    <logger name = "org.springframework" level="INFO"/>
+    <logger name = "org.thymeleaf" level="INFO"/> <!-- Trace gives all details for decoupled template-->
+</configuration>

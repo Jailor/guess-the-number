@@ -1,0 +1,22 @@
+<!-- attr has selector which will inject the attribute value -->
+<!-- separate template from html, and thymeleaf will process both -->
+<thlogic>
+    <attr sel="#headId"
+         th:replace="~{fragments/head :: headFragment}"/>
+    <attr sel="#game-title" th:text="#{game.title}"/> <!-- #{} is for i18n, retrieve from properties file -->
+    <attr sel="#main-message"
+          th:text="${__${mainMessageStr}__}"
+          th:with="mainMessageStr=${T(org.example.util.AttributeNames).MAIN_MESSAGE}"/>
+    <attr sel="#result-message"
+          th:text="${__${resultMessageStr}__}"
+          th:with="resultMessageStr=${T(org.example.util.AttributeNames).RESULT_MESSAGE}"/>
+    <attr sel="#game-form"
+          th:action="${playString}"
+          th:with="playString=${T(org.example.util.GameMappings).PLAY}"/>
+    <attr sel="#enter-guess"
+          th:text="#{game.enter.guess}"/>
+    <attr sel="#submit"
+            th:value="#{game.submit}"/>
+    <attr sel="#footerId"
+          th:replace="~{fragments/footer :: footer}"/>
+</thlogic>
