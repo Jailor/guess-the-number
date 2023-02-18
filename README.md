@@ -1,36 +1,35 @@
-# Orders management databasae
+# Guess the Number Game
 
 ## About :thought_balloon:
-The task was to design an order management system for processing client orders for a warehouse.
-Relational databases are used to store the products, the clients, and the orders. The
-application is designed according to the layered architecture pattern.
+The task was to implement the "Higher or Lower" number guessing game, as given by the specification from
+[Tim Buchalka's Masterclass](https://www.udemy.com/course/java-spring-framework-masterclass/) from Udemy.
 
 ## Features :white_check_mark:
-The orders management database has the following features:
- - Allows the user to easily choose what they want to edit by offering multiple GUI views: orders, products or clients.
- - Editing and removing is done by simply selecting the entry in the table.
- - Product stock is automatically updated when an order is placed or deleted.
- - Error alerts and confirmation dialogs are displayed to the user.
+The game has the following features:
+ - Allows the user to play the game in the browser
+ - User cannot input invalid numbers
+ - Internationalization support for the Spanish language
+ - Homepage and possibility to replay the game after it has been completed
 
 ## Implementation and GUI :computer:
 
 ### Notable implementation details
-- Scalable generic GUI: There is only one controller for the tables and only one for editing. The fields are dynamically generated using reflection and allows for scalability, adding a new table is very easy.
-- Scalable generic DAO: data access class that interacts with the database also uses generics for all CRUD operations, no need to write specific code for each class.
-- SQL database: Using a database to ensure data consistency, security and sharing.
-- Layered architecture pattern: The packages interact with each other in a layered pattern in order to ensure coherence and cohesion. More details on this are given in the pdf document, as well as diagrams.
+- Spring Boot has been used for building the projects, and many framework features have been explored during this project like constructor dependency injection, beans, contexts, request interception, annotations and many more.
+- Lombok allows for less boilerplate code with its annotations.
+- Constants are stored in property files for easy access and less code duplication
+- Internationalization support for english and spanish using spring functionality
+- Multi-module project, increases cohesion
+- Thymeleaf template engine used frontend logic. 
 
-### Main menu
-<img src="/ss/main_menu.png" width="500" >
+Because there is no CSS, images will look a bit dated, but they still show the basic functionality.
+### Start
+<img src="/ss/start.PNG" width="900" >
 
-### Client Table
-<img src="/ss/client_table.png" width="500" >
+### Response
+<img src="/ss/response.PNG" width="900" >
 
-### Product Table
-<img src="/ss/product_table.PNG" width="500" >
+### Spanish
+<img src="/ss/spanish_i18n.PNG" width="900" >
 
-### Add View
-<img src="/ss/add_view.PNG" width="500" >
-
-### Edit View
-<img src="/ss/edit_view.png" width="500" >
+### End
+<img src="/ss/end.PNG" width="900" >
